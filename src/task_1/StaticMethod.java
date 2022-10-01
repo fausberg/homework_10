@@ -34,29 +34,13 @@ public class StaticMethod {
             dcopy = dcopy.replace("//", "/");
             dcopy = dcopy.replaceFirst("/", "");
         }
-        System.out.println(dcopy);
         return dcopy;
     }
 
-    public static String xReplace1(String d, int x) {
-        String xcopy = String.valueOf(x);
-        String dcopy = d;
-        if (dcopy.contains("-")) {
-            dcopy = dcopy.replace("-", "/");
-        }
-        while (dcopy.contains(xcopy)) {
-            dcopy = dcopy.replaceFirst(xcopy, "");
-        }
-        if (dcopy.contains("//")) {
-            dcopy = dcopy.replace("//", "/");
-            dcopy = dcopy.replaceFirst("/", "");
-        }
-        return dcopy;
-    }
 
     public static void sb(Document document) {
         StringBuilder test = new StringBuilder();
-        test.append("Letters:").append(xReplace1(document.documentNumber(document.getX(), document.getY()), document.getX()));
+        test.append("Letters:").append(xReplace(document.documentNumber(document.getX(), document.getY()), document.getX()));
         String test1 = String.valueOf(test);
         test1 = test1.toUpperCase();
         System.out.println(test1);
