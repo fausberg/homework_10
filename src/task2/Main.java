@@ -14,12 +14,16 @@ public class Main {
         }
         System.out.println(schet);
         strcopy = str;
+        String strcopymax = str;
         System.out.println(strcopy);
 
         String str1 = strcopy.substring(0,strcopy.indexOf(" "));
         strcopy = strcopy.substring(strcopy.indexOf(" ")+1);
+        strcopymax = strcopymax.substring(strcopymax.indexOf(" ")+1);
         int min = str1.length();
+        int max = str1.length();
         String copy = str1;
+        String copymax = str1;
 
         for(int i = 0; i < schet; i++){
             if(i == schet - 1){
@@ -37,6 +41,23 @@ public class Main {
 
         System.out.println(min);
         System.out.println(copy);
+
+        for(int i = 0; i < schet; i++){
+            if(i == schet - 1){
+                str1 = strcopymax.substring(0);
+                strcopymax = null;
+            }else {
+                str1 = strcopymax.substring(0,strcopymax.indexOf(" "));
+                strcopymax = strcopymax.substring(strcopymax.indexOf(" ") + 1);
+            }
+            if(max <= str1.length()){
+                max = str1.length();
+                copymax = str1;
+            }
+        }
+
+        System.out.println(max);
+        System.out.println(copymax);
     }
 
 }
